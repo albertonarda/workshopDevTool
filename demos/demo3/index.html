@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Demo3</title>
+	<link rel="stylesheet" media="screen" href="style.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="backToSlides">
+		<a href="javascript:history.back()">&lt; BACK TO SLIDES</a>
+	</div>
+
+	<div class="animation">
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(() => {
+			var i = 5000;
+			$('.animation').append('<h1>Appending some lorem ipsum</h1>');
+			//bad
+			while (i > 0) {
+				$('.animation').append($('<p>Lorem Ipsum</p>'));
+				i--;
+			}
+			//good
+			var result = "";
+			i = 5000;
+			while (i > 0) {
+				result += '<p>Lorem Ipsum</p>';
+				i--;
+			}
+			$('.animation').append(result);
+			$('.animation').append('<p>done</p>');
+
+		});
+	</script>
+</body>
+
+</html>

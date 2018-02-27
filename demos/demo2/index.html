@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Demo2</title>
+	<link rel="stylesheet" media="screen" href="style.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="backToSlides">
+		<a href="javascript:history.back()">&lt; BACK TO SLIDES</a>
+	</div>
+	<div class="page-wrapper">
+		<button class="jqueryON">JQuery animation</button>
+		<button class="cssON">CSS animation</button>
+	</div>
+	<div class="animation">
+
+		<img src="jquery-tutorial.jpg" alt="" class="jquery" height="120">
+
+		<img src="CSS3.jpg" alt="" class="cssAnimate" height="120">
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(() => {
+			$('.cssON').on('click', () => {
+				$('.cssAnimate').toggleClass('css');
+			});
+			var animate = () => {
+				$('img.jquery').animate({
+					left: '800px',
+					paddingTop: '50%'
+				}, 3000, "linear", () => {
+					$('img.jquery').css({
+						left: '0px',
+						paddingTop: '0%'
+					});
+					$('body').trigger("complete");
+				});
+			}
+			var jqueryON = false;
+			$('.jqueryON').on("click", () => {
+				jqueryON = !jqueryON;
+				if (jqueryON) {
+					animate();
+					$('body').on("complete", () => {
+						animate();
+					});
+					return;
+				}
+				$('img.jquery').stop(true, true);
+				$('body').off("complete");
+			});
+		});
+	</script>
+</body>
+
+</html>
