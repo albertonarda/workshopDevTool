@@ -21,7 +21,7 @@
 	<script>
 		$(() => {
 			var i = 5000;
-			$('.animation').append('<h1>Appending some lorem ipsum</h1>');
+			$('.backToSlides').after('<h1>Appending some lorem ipsum</h1>');
 			//bad
 			while (i > 0) {
 				$('.animation').append($('<p>Lorem Ipsum</p>'));
@@ -36,6 +36,10 @@
 			}
 			$('.animation').append(result);
 			$('.animation').append('<p>done</p>');
+
+			setTimeout(() => {
+				$('h1').css('color', 'red');
+			}, 5000);
 
 		});
 	</script>

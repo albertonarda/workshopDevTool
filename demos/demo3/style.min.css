@@ -59,6 +59,11 @@ button {
   font-size: 18px;
 }
 
+h1 {
+  padding-left: 20px;
+}
+
 .animation {
   padding: 20px;
+  columns: 25;
 }
