@@ -62,7 +62,7 @@
 					- sources -> overrides -> check 'enable local overrides' -> right click on the css files -> save for overrides
 					- CTRL+P find file
 					- {} format file
-					- multicursor -> CTRL + D
+					- multicursor -> CTRL+D
 					- font-display:swap
 				</textarea>
 			</section>
@@ -102,8 +102,12 @@
 					### Demo 2
 					[../demos/demo2/index.html](../demos/demo2/index.html)
 					Note:
-					Console -> Rendering -> check 'FPS Meter'
-					Performance -> settings -> CPU throttling
+					- Console -> Rendering -> check 'FPS Meter'
+					- Performance -> settings -> CPU throttling
+					- check FPS on both animation type
+					- Click on jquery img -> break on attribute modification -> 
+					click on btn animation -> see stack and right click on one jquery script 
+					and blackbox script to hide it from call stack
 				</textarea>
 			</section>
 			<section data-markdown>
@@ -111,6 +115,7 @@
 					### Demo 2 Recap
 					- FPS Meter	
 					- CPU throttling
+					- Blackbox script
 				</textarea>
 			</section>
 			<section data-markdown>
@@ -140,15 +145,15 @@
 				<textarea data-template>
 					### Lighthouse
 					It can be run against any web page, public or requiring authentication.<br> 
-					It has audits for performance, accessibility, progressive web apps, and more.	
+					It has audits for performance, accessibility, progressive web apps, and more.	<br>
+					[example](https://www.smashingmagazine.com/)
 					Note:
 					- run a demo on https://www.smashingmagazine.com/
 					- Panel -> audit
 					- check performance checkbox
-					- view one suggestion eg: offline imaegs and click on learn more					
+					- view one suggestion eg: offline images and click on learn more					
 				</textarea>
 			</section>
-
 			<section data-markdown>
 				<textarea data-template>
 					### Lighthouse
@@ -159,26 +164,66 @@
 					- Click on Lighthouse PWA Score		
 				</textarea>
 			</section>
-
-
-
-
-
 			<section data-markdown>
 				<textarea data-template>
-					quantify damage from third party script		
+					## Quantify damage from third party script
+					[Demo 4](https://www.nature.com)
+					Note:
+					- Go to https://www.nature.com
+					- Performance Panel
+					- CPU Throttling 6x
+					- Start Profiling nd reload the Page
+					- Summary panel -> Scripting time
+					- Call tree, find the not necessary script that is time expensive
+					- CTRL+SHIFT+P -> Enable third party badges 
+					- Go to Network -> Block request domain
+					- Re-do performance profile
 				</textarea>
 			</section>
-
 			<section data-markdown>
 				<textarea data-template>
-					blackbox script from call stack	 es jquery o ytos	
+					### Demo 4 Recap
+					- Scripting time
+					- Enable third party badges
+					- CTRL+SHIFT+P
+					- Block resources
+				</textarea>
+			</section>
+			<section data-markdown>
+				<textarea data-template>
+					## Performance Monitor
+					[example](https://www.smashingmagazine.com/)
+					Note: 
+					- Go to https://www.smashingmagazine.com/
+					- Console -> Performance Monitor Panel 
+					- you can enable and disable features
+					- you can change page and the monitor will remain active so you can view the change
+					- go to https://www.nature.com
+				</textarea>
+			</section>
+			<section data-markdown>
+				<textarea data-template>
+					## Paint Indicators	
+					[example](https://www.nature.com)
+					Note: 
+					- go to https://www.nature.com
+					- CTRL+SHIFT+P -> Setting
+					- Experiments -> hit SHIFT 6 times -> check Timeline: paint timing markers
+					- FMP -> First Meaningful Paint and others markers will appear in timeline as dashed vertical lines
+				</textarea>
+			</section>
+			<section data-markdown>
+				<textarea data-template>
+					## Code Coverage
+					[example](https://www.nature.com)
+					Note:
+					- go to https://www.nature.com
+					- Console Drawer -> Menu -> Coverage
 				</textarea>
 			</section>
 			<section data-markdown>
 				<textarea data-template>
 					### Thank you
-					[alberto.narda@ynap.com](mailto:alberto.narda@ynap.com) <br>
 					@albertonarda			
 				</textarea>
 			</section>
