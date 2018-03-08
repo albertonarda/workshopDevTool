@@ -129,14 +129,52 @@
 					- Console violations se setti la console su verbose hai dei log di Violation di best practice di performance (es: setTimeout troppo lungo)
 				</textarea>
 			</section>
+			<section data-markdown>
+				<textarea data-template>
+					### Demo 3 Recap
+					- Performance profiling	
+					- Console violation
+				</textarea>
+			</section>
+			<section data-markdown>
+				<textarea data-template>
+					### Lighthouse
+					It can be run against any web page, public or requiring authentication.<br> 
+					It has audits for performance, accessibility, progressive web apps, and more.	
+					Note:
+					- run a demo on https://www.smashingmagazine.com/
+					- Panel -> audit
+					- check performance checkbox
+					- view one suggestion eg: offline imaegs and click on learn more					
+				</textarea>
+			</section>
 
 			<section data-markdown>
 				<textarea data-template>
 					### Lighthouse
-					performance checked						
+					WebPageTest + Lighthouse	
+					[example](https://www.webpagetest.org/result/180308_HQ_f38779aaca8a8e63ee7109a78bdd9baf/)
+					Note:
+					- Advanced Settings -> Chrome -> Capture Lighthouse Report
+					- Click on Lighthouse PWA Score		
 				</textarea>
 			</section>
 
+
+
+
+
+			<section data-markdown>
+				<textarea data-template>
+					quantify damage from third party script		
+				</textarea>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					blackbox script from call stack	 es jquery o ytos	
+				</textarea>
+			</section>
 			<section data-markdown>
 				<textarea data-template>
 					### Thank you
@@ -148,6 +186,28 @@
 
 			<section>
 				<pre><code data-trim data-noescape>
+					(function( root, factory ) {
+						if( typeof define === 'function' && define.amd ) {
+							// AMD. Register as an anonymous module.
+							define( function() {
+								root.Reveal = factory();
+								return root.Reveal;
+							} );
+						} else if( typeof exports === 'object' ) {
+							// Node. Does not work with strict CommonJS.
+							module.exports = factory();
+					} else {
+					(function( root, factory ) {
+						if( typeof define === 'function' && define.amd ) {
+							// AMD. Register as an anonymous module.
+							define( function() {
+								root.Reveal = factory();
+								return root.Reveal;
+							} );
+						} else if( typeof exports === 'object' ) {
+							// Node. Does not work with strict CommonJS.
+							module.exports = factory();
+						} else {
 					(function( root, factory ) {
 						if( typeof define === 'function' && define.amd ) {
 							// AMD. Register as an anonymous module.
