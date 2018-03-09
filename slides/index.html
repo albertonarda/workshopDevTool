@@ -129,16 +129,21 @@
 					[../demos/demo3/index.html](../demos/demo3/index.html)
 					Note:
 					- Performance -> CPU throttling
-					- Start profiling and reload page
-					- Source panel -> a sinistra c'è il time information
-					- Console violations se setti la console su verbose hai dei log di Violation di best practice di performance (es: setTimeout troppo lungo)
+					- Start profiling and manually reload page
+					- Source panel -> time information is near row number
+					- Go to User Timing in performance and see bars with the name defined in performance.measure
+					- Open console and show performance instructions 
+					- Console violations if console is setted on verbose you can see the Violation of performance best practice (eg: setTimeout took too much time)
+					- open console sidebar, it groups messages
 				</textarea>
 			</section>
 			<section data-markdown>
 				<textarea data-template>
 					### Demo 3 Recap
 					- Performance profiling	
+					- Performance measuring
 					- Console violation
+					- Console Sidebar
 				</textarea>
 			</section>
 			<section data-markdown>
@@ -167,7 +172,7 @@
 			<section data-markdown>
 				<textarea data-template>
 					## Quantify damage from third party script
-					[Demo 4](https://www.nature.com)
+					[example](https://www.nature.com)
 					Note:
 					- Go to https://www.nature.com
 					- Performance Panel
@@ -182,7 +187,7 @@
 			</section>
 			<section data-markdown>
 				<textarea data-template>
-					### Demo 4 Recap
+					### Recap
 					- Scripting time
 					- Enable third party badges
 					- CTRL+SHIFT+P
@@ -223,56 +228,16 @@
 			</section>
 			<section data-markdown>
 				<textarea data-template>
-					### Thank you
-					@albertonarda			
+					[https://umaar.com/dev-tips/](https://umaar.com/dev-tips/)
 				</textarea>
-			</section>
-
-
-			<section>
-				<pre><code data-trim data-noescape>
-					(function( root, factory ) {
-						if( typeof define === 'function' && define.amd ) {
-							// AMD. Register as an anonymous module.
-							define( function() {
-								root.Reveal = factory();
-								return root.Reveal;
-							} );
-						} else if( typeof exports === 'object' ) {
-							// Node. Does not work with strict CommonJS.
-							module.exports = factory();
-					} else {
-					(function( root, factory ) {
-						if( typeof define === 'function' && define.amd ) {
-							// AMD. Register as an anonymous module.
-							define( function() {
-								root.Reveal = factory();
-								return root.Reveal;
-							} );
-						} else if( typeof exports === 'object' ) {
-							// Node. Does not work with strict CommonJS.
-							module.exports = factory();
-						} else {
-					(function( root, factory ) {
-						if( typeof define === 'function' && define.amd ) {
-							// AMD. Register as an anonymous module.
-							define( function() {
-								root.Reveal = factory();
-								return root.Reveal;
-							} );
-						} else if( typeof exports === 'object' ) {
-							// Node. Does not work with strict CommonJS.
-							module.exports = factory();
-						} else {
-				</code></pre>
 			</section>
 			<section data-markdown>
 				<textarea data-template>
-					## Page title
-			
-					A paragraph with some text and a [link](http://hakim.se).
+					### Thank you
+					@albertonarda
 				</textarea>
 			</section>
+
 		</div>
 	</div>
 

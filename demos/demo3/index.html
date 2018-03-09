@@ -20,27 +20,67 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		$(() => {
-			var i = 5000;
-			$('.backToSlides').after('<h1>Appending some lorem ipsum</h1>');
-			//bad
-			while (i > 0) {
-				$('.animation').append($('<p>Lorem Ipsum</p>'));
-				i--;
+			var appendEach = () => {
+				var i = 5000;
+				$('.backToSlides').after('<h1>Appending some lorem ipsum</h1>');
+				//bad
+				while (i > 0) {
+					$('.animation').append($('<p>Lorem Ipsum</p>'));
+					i--;
+				}
 			}
-			//good
-			var result = "";
-			i = 5000;
-			while (i > 0) {
-				result += '<p>Lorem Ipsum</p>';
-				i--;
+
+			var appendAll = () => {
+				//good
+				var result = "";
+				i = 5000;
+				while (i > 0) {
+					result += '<p>Lorem Ipsum</p>';
+					i--;
+				}
+				$('.animation').append(result);
+				$('.animation').append('<p>done</p>');
 			}
-			$('.animation').append(result);
-			$('.animation').append('<p>done</p>');
+
+			performance.mark('appendEach Start')
+
+			appendEach();
+
+			performance.mark('appendEach End')
+
+			performance.measure(
+				'appendEach',
+				'appendEach Start',
+				'appendEach End'
+			)
+
+			performance.mark('appendAll Start')
+
+			appendAll();
+
+			performance.mark('appendAll End')
+
+			performance.measure(
+				'appendAll',
+				'appendAll Start',
+				'appendAll End'
+			)
 
 			setTimeout(() => {
 				$('h1').css('color', 'red');
 			}, 5000);
 
+			i = 20;
+			while (i > 0) {
+				if (i % 2) {
+					console.log("Logger");
+				} else if (i % 3) {
+					console.warn("Warning");
+				} else {
+					console.error("Error");
+				}
+				i--;
+			}
 		});
 	</script>
 </body>
