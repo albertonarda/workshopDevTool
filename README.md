@@ -2,4 +2,4 @@
 
 Workshop DevTools
 
-[slides](https://albertonarda.github.io/workshopDevTools/slides/)
+[Slides](https://albertonarda.github.io/workshopDevTools/slides/)
